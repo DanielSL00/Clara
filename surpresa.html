@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Clara ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:linear-gradient(180deg,#ffd7df,#fff6f8);
+font-family:Georgia,serif;
+overflow-x:hidden;
+min-height:100vh;
+}
+
+/* CAPIVARAS */
+
+.capivaras{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+pointer-events:none;
+z-index:999;
+overflow:hidden;
+}
+
+.capivara{
+position:absolute;
+top:-120px;
+width:70px;
+opacity:.95;
+animation:cair linear forwards;
+}
+
+@keyframes cair{
+
+from{
+transform:translateY(-120px) rotate(0deg);
+}
+
+to{
+transform:translateY(calc(100vh + 200px)) rotate(360deg);
+}
+
+}
+
+/* CARD CENTRAL */
+
+.container{
+
+position:relative;
+z-index:1;
+
+max-width:850px;
+
+margin:120px auto 50px;
+
+background:rgba(255,255,255,.88);
+
+padding:40px;
+
+border-radius:40px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+text-align:center;
+
+}
+
+/* CHAPÉU */
+
+.chapeu{
+
+position:absolute;
+
+top:-130px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:240px;
+
+}
+
+/* TÍTULO */
+
+h1{
+
+font-size:3rem;
+
+color:#b71c3b;
+
+margin-top:40px;
+
+}
+
+.sub{
+
+max-width:650px;
+
+margin:20px auto;
+
+line-height:1.8;
+
+font-size:1.15rem;
+
+color:#6b4d4d;
+
+}
+
+.linha{
+
+width:250px;
+
+height:2px;
+
+background:#efb5c0;
+
+margin:30px auto;
+
+}
+
+/* FOTO */
+
+.foto img{
+
+width:100%;
+
+max-width:500px;
+
+border-radius:25px;
+
+border:5px solid #ffd6de;
+
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+}
+
+/* TEXTO */
+
+.texto{
+
+margin-top:35px;
+
+font-size:1.15rem;
+
+line-height:2;
+
+color:#5b4747;
+
+}
+
+.texto h2{
+
+color:#c2185b;
+
+margin-bottom:20px;
+
+}
+
+.eu-te-amo{
+
+margin-top:20px;
+
+font-size:2.2rem;
+
+font-weight:bold;
+
+color:#d62839;
+
+}
+
+/* JACQUIN */
+
+.jacquin{
+
+margin-top:40px;
+
+}
+
+.jacquin img{
+
+width:100%;
+
+max-width:420px;
+
+}
+
+.frase{
+
+font-size:1.2rem;
+
+font-weight:bold;
+
+color:#b71c3b;
+
+margin-top:10px;
+
+}
+
+/* FOOTER */
+
+footer{
+
+margin-top:20px;
+
+color:#866565;
+
+}
+
+@media(max-width:600px){
+
+    .chapeu{
+        width:160px;
+        top:-90px;
+    }
+
+    h1{
+        font-size:2rem;
+    }
+    
+    .container{
+	padding:25px;
+    }
+    
+    .sub,
+    .texto{
+	font-size:1rem;
+    }
+
+    .eu-te-amo{
+	font-size:1.7rem;
+
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="capivaras" id="capivaras"></div>
+
+<div class="container">
+
+<img src="chapeu.png" class="chapeu">
+
+<h1>Para a minha chef preferida ❤️</h1>
+
+<p class="sub">
+Cada dia ao seu lado é como uma receita perfeita:
+feita com carinho, temperada com amor
+e melhor ainda quando é com você.
+</p>
+
+<div class="linha"></div>
+
+<div class="foto">
+<img src="foto-casal.jpeg">
+</div>
+
+<div class="texto">
+
+<h2>❤️ Você é meu maior presente ❤️</h2>
+
+<p>
+Obrigado por ser minha companhia,
+meu apoio, meu sorriso e meu lar.
+</p>
+
+<p>
+Prometo continuar tentando ser o melhor
+"chef" dessa receita chamada nós.
+</p>
+
+<div class="eu-te-amo">
+Eu te amo muuuuuuito! ❤️
+</div>
+
+</div>
+
+<div class="jacquin">
+
+<img src="jacquin-cupido.png">
+
+<div class="frase">
+👨‍🍳 "MAS É CLARO QUE EU APROVO ESSE CASAL!"
+</div>
+
+</div>
+
+<footer>
+Feito com amor para minha linda, maravilhosa e incrível mulher! ❤️
+</footer>
+
+</div>
+
+<script>
+
+const container = document.getElementById("capivaras");
+
+function criarCapivara(){
+
+    const img = document.createElement("img");
+
+    img.src = "capivara-coracao.png";
+
+    img.className = "capivara";
+
+    img.style.left =
+        Math.random() * 100 + "%";
+
+    img.style.width =
+        (40 + Math.random() * 40) + "px";
+
+    img.style.animationDuration =
+        (8 + Math.random() * 6) + "s";
+
+    container.appendChild(img);
+
+    setTimeout(() => {
+        img.remove();
+    }, 15000);
+
+}
+
+/* já começa com várias na tela */
+
+for(let i = 0; i < 10; i++){
+
+    setTimeout(() => {
+        criarCapivara();
+    }, i * 250);
+
+}
+
+/* cria novas continuamente */
+
+setInterval(criarCapivara, 800);
+
+</script>
+</body>
+</html>
